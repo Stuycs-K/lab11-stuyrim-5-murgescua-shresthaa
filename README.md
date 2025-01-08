@@ -18,18 +18,25 @@ Make a clear list of features that work/dont work
 
 ## Adventurer Subclasses
 
-1. Spice Enthusiast (21/21 HP, 20 sprays)
-(long-range attacker/buffer)
-Attack: Throws spices into opp's eyes (deals 3-5 damage)
-Special Attack: Gigantic pepper spray (deals 5-14 damage, reduces sprays by 10)
-Support (self): Eats spicy sticks (restores 5 sprays)
-Support (comrades): Gives comrades spicy sticks (restores 1 HP, 6 sprays)
+## 1. Spice Enthusiast
+**HP:** 21/21  
+**Sprays:** 20  
+**Role:** Long-range attacker/buffer  
 
-3. Hungry Vampire (30/30 HP, 15 lifeblood)
-(healer/debuffer)
-Attack: Turns into a bat and unleashes martial arts (deals 1-4 damage)
-Special Attack: Sucks opp's blood (deals 10 damage, reduce lifeblood by 7, restores 2 HP)
-Support (self): Grabs a nearby wolf and sucks its blood (restores 4 lifeblood)
-Support (comrades): Gives comrades one drop of his condensed lifeblood (restores 2 HP, reduces 3 HP)
+- **Attack:** Throws spices into opponent's eyes (deals 3-5 damage)  
+- **Special Attack:** Gigantic pepper spray (deals 5-14 damage, reduces sprays by 10)  
+- **Support (self):** Eats spicy sticks (restores 5 sprays)  
+- **Support (comrades):** Gives comrades spicy sticks (restores 1 HP, 6 sprays)  
 
+---
+
+## 2. Hungry Vampire
+**HP:** 30/30  
+**Lifeblood:** 15  
+**Role:** Healer/debuffer  
+
+- **Attack:** Turns into a bat and unleashes martial arts moves (deals 1-4 damage)  
+- **Special Attack:** Sucks opponent's blood (deals 10 damage, reduces lifeblood by 7, restores 2 HP)  
+- **Support (self):** Grabs a nearby wolf and sucks its blood (restores 4 lifeblood)  
+- **Support (comrades):** Gives comrades one drop of condensed lifeblood (restores 2 HP, reduces 3 HP)  
 
