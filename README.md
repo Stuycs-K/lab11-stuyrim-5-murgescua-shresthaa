@@ -18,9 +18,9 @@ Make a clear list of features that work/dont work
 
 ## Adventurer Subclasses
 
-### 1. Spice Enthusiast
-**Name:** Seifer
-**HP:** 21/21 [^1]
+### 1. Spice Enthusiast  
+**Name:** Seifer  
+**HP:** 21/21 [^1]  
 **Sprays:** 20  
 **Role:** Long-range attacker/buffer  
 
@@ -31,9 +31,9 @@ Make a clear list of features that work/dont work
 
 ---
 
-### 2. Hungry Vampire
-**Name:** Morpheus
-**HP:** 30/30 [^1]
+### 2. Hungry Vampire  
+**Name:** Morpheus  
+**HP:** 30/30 [^1]  
 **Lifeblood:** 15  
 **Role:** Healer/debuffer  
 
@@ -44,15 +44,15 @@ Make a clear list of features that work/dont work
 
 ---
 
-### 3. Code Warrior
-**Name:** Carmack
-**HP:** 24/24 [^1]
-**Caffeine:** 12
-**Role:** Main attacker
+### 3. Code Warrior  
+**Name:** Carmack  
+**HP:** 24/24 [^1]  
+**Caffeine:** 12  
+**Role:** Main attacker  
 
 - **Attack:** Attacks opponent and take a sip of coffee (deals 2-7 damage, restores 2 caffeine)  
 - **Special Attack:** Hacks the matrix (deals 3-12 damage, reduces caffeine by 8)  
 - **Support (self):** Drinks coffee (restores 6 special, restores 1 HP)  
 - **Support (comrades):** Gives comrades a coffee (restores 5 special)  
-
+  
 [^1]: This defines starting HP and HP limit if HP not specified (specified HP must be under the limit).
