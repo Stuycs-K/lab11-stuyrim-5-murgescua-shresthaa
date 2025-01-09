@@ -40,7 +40,7 @@ Make a clear list of features that work/dont work
 - **Attack:** Turns into a bat and unleashes martial arts moves (deals 2-4 damage, restores 2 lifeblood)  
 - **Special Attack:** Sucks opponent's blood (deals 8 damage, reduces lifeblood by 5, restores 2 HP)  
 - **Support (self):** Grabs a nearby wolf and sucks its blood (restores 6 lifeblood)  
-- **Support (comrades):** Gives comrades one drop of condensed lifeblood (restores 3 HP, reduces 2 HP)
+- **Support (comrades):** Gives comrades one drop of condensed lifeblood (restores comrade 3 HP, reduces self 2 HP)
 
 ---
 
