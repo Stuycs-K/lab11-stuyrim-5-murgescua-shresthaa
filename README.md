@@ -18,25 +18,41 @@ Make a clear list of features that work/dont work
 
 ## Adventurer Subclasses
 
-## 1. Spice Enthusiast
-**HP:** 21/21  
+### 1. Spice Enthusiast
+**Name:** Seifer
+**HP:** 21/21 [^1]
 **Sprays:** 20  
 **Role:** Long-range attacker/buffer  
 
-- **Attack:** Throws spices into opponent's eyes (deals 3-5 damage)  
-- **Special Attack:** Gigantic pepper spray (deals 5-14 damage, reduces sprays by 10)  
-- **Support (self):** Eats spicy sticks (restores 5 sprays)  
-- **Support (comrades):** Gives comrades spicy sticks (restores 1 HP, 6 sprays)  
+- **Attack:** Throws spices into opponent's eyes and makes them tear up (deals 3-5 damage, restores 2 sprays)  
+- **Special Attack:** Gigantic pepper spray shower (deals 5-13 damage, reduces sprays by 6)  
+- **Support (self):** Drinks spicy soup and reinvigorates (restores 4 sprays, restores 1 HP)  
+- **Support (comrades):** Gives comrades spicy sticks to eat (restores 6 special)  
 
 ---
 
-## 2. Hungry Vampire
-**HP:** 30/30  
+### 2. Hungry Vampire
+**Name:** Morpheus
+**HP:** 30/30 [^1]
 **Lifeblood:** 15  
 **Role:** Healer/debuffer  
 
-- **Attack:** Turns into a bat and unleashes martial arts moves (deals 1-4 damage)  
-- **Special Attack:** Sucks opponent's blood (deals 10 damage, reduces lifeblood by 7, restores 2 HP)  
-- **Support (self):** Grabs a nearby wolf and sucks its blood (restores 4 lifeblood)  
-- **Support (comrades):** Gives comrades one drop of condensed lifeblood (restores 2 HP, reduces 3 HP)  
+- **Attack:** Turns into a bat and unleashes martial arts moves (deals 2-4 damage, restores 2 lifeblood)  
+- **Special Attack:** Sucks opponent's blood (deals 8 damage, reduces lifeblood by 5, restores 2 HP)  
+- **Support (self):** Grabs a nearby wolf and sucks its blood (restores 6 lifeblood)  
+- **Support (comrades):** Gives comrades one drop of condensed lifeblood (restores 3 HP, reduces 2 HP)
 
+---
+
+### 3. Code Warrior
+**Name:** Carmack
+**HP:** 24/24 [^1]
+**Caffeine:** 12
+**Role:** Main attacker
+
+- **Attack:** Attacks opponent and take a sip of coffee (deals 2-7 damage, restores 2 caffeine)  
+- **Special Attack:** Hacks the matrix (deals 3-12 damage, reduces caffeine by 8)  
+- **Support (self):** Drinks coffee (restores 6 special, restores 1 HP)  
+- **Support (comrades):** Gives comrades a coffee (restores 5 special)  
+
+[^1]: This defines starting HP and HP limit if HP not specified (specified HP must be under the limit).
