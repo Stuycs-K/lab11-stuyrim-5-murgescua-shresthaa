@@ -25,7 +25,7 @@ Make a clear list of features that work/dont work
 **Role:** Long-range attacker/buffer  
 
 - **Attack:** Throws spices into opponent's eyes and makes them tear up (deals 3-5 damage, restores 2 sprays)  
-- **Special Attack:** Gigantic pepper spray shower (deals 5-13 damage, reduces sprays by 6)  
+- **Special Attack:** (AoE) Sprays the gigantic pepper spray on opponents (deals 5-13 damage, reduces sprays by 6)  
 - **Support (self):** Drinks spicy soup and reinvigorates (restores 4 sprays, restores 1 HP)  
 - **Support (comrades):** Gives comrades spicy sticks to eat (restores 6 special)  
 
@@ -35,7 +35,7 @@ Make a clear list of features that work/dont work
 **Name:** Morpheus  
 **HP:** 30/30 [^1]  
 **Lifeblood:** 15  
-**Role:** Healer/debuffer  
+**Role:** Healer/debuffer
 
 - **Attack:** Turns into a bat and unleashes martial arts moves (deals 2-4 damage, restores 2 lifeblood)  
 - **Special Attack:** Sucks opponent's blood (deals 8 damage, reduces lifeblood by 5, restores 2 HP)  
