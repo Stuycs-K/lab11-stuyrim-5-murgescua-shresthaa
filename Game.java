@@ -6,7 +6,16 @@ public class Game{
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
-    run();
+    //run();
+    //drawBackground();
+    Adventurer p1 = new CodeWarrior("A");
+    Adventurer p2 = new CodeWarrior("B");
+    Adventurer p3 = new CodeWarrior("C");
+    ArrayList<Adventurer> partyexample = new ArrayList<Adventurer>();
+    partyexample.add(p1);
+    partyexample.add(p2);
+    partyexample.add(p3);
+    drawParty(partyexample, 1);
   }
 
   //Display the borders of your screen that will not change.
@@ -14,6 +23,8 @@ public class Game{
   public static void drawBackground(){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
+    Text.go(4, 1);
+    System.out.print("Hi");
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
@@ -64,6 +75,14 @@ public class Game{
 
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       //YOUR CODE HERE
+      for (int i = 0; i < party.size(); i++) { //for each member
+          Text.go(1, (i+2)*10);
+          System.out.print(party.get(i).getName());
+          Text.go(2, (i+2)*10);
+          System.out.print("HP: " + party.get(i).getHP());
+          Text.go(3, (i+2)*10);
+          System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
+      }
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
     }
 
