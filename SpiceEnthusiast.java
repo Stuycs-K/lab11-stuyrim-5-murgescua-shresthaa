@@ -1,4 +1,4 @@
-public class SpiceEnthusiast extends Adventurer{
+public class SpiceEnthusiast extends Adventurer {
     int sprays, spraysMax;
 
     /*the other constructors ultimately call the constructor
@@ -19,7 +19,7 @@ public class SpiceEnthusiast extends Adventurer{
 
     /*The next 8 methods are all required because they are abstract:*/
     public String getSpecialName(){
-      return "Sprays";
+      return "sprays";
     }
 
     public int getSpecial(){
@@ -36,40 +36,38 @@ public class SpiceEnthusiast extends Adventurer{
 
     /*Deal 3-5 damage to opponent, restores 2 sprays*/
     public String attack(Adventurer other){
-      int damage = (int)(Math.random()*6)+2;
+      int damage = (int) (Math.random() * 4) + 3;
       other.applyDamage(damage);
       restoreSpecial(2);
-      return this + " attacked "+ other + " and dealt "+ damage +
-      " points of damage. They then take a sip of their coffee.";
+      return this + " throws spices at " + other + " and dealt " + damage
+      + " points of damage. " + other + " tears up.";
     }
 
     /*Deal 5-13 damage to opponent, only if sprays is high enough.
     *Reduces sprays by 6.*/
     public String specialAttack(Adventurer other){
-      if(getSpecial() >= 8){
-        setSpecial(getSpecial()-8);
-        int damage = (int)(Math.random()*5+Math.random()*5)+3;
+      if (getSpecial() >= 6) {
+        setSpecial(getSpecial() - 6);
+        int damage = (int) (Math.random() * 6 + Math.random() * 6) + 5;
         other.applyDamage(damage);
-        return this + " used their "+preferredLanguage+
-        " skills to hack the matrix. "+
-        " This glitched out "+other+" dealing "+ damage +" points of damage.";
-      }else{
-        return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
+        return this + " used their gigantic pepper spray on " + other + ". Spiciness attacks "
+        + other + " dealing " + damage + " points of damage.";
+      } else {
+        return "Not enough sprays to use the gigantic pepper spray. Instead " + attack(other);
       }
-
     }
 
     /*Restores 4 special and 1 hp to self.*/
     public String support(){
       int hp = 1;
-      setHP(getHP()+hp);
-      return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-      + getSpecialName()+ " and "+hp+" HP";
+      setHP(getHP() + hp);
+      return this + " drinks a bowl of hot flaming soup to reinvigorate " + restoreSpecial(6) + " "
+      + getSpecialName() + " and " + hp + " HP.";
     }
 
     /*Restores 6 special to other*/
     public String support(Adventurer other){
-      return "Gives a coffee to "+other+" and restores "
-      + other.restoreSpecial(5)+" "+other.getSpecialName();
+      return "Gives a pack of spicy sticks to " + other + " and restores "
+      + other.restoreSpecial(5) + " " + other.getSpecialName();
     }
   }
