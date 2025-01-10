@@ -76,11 +76,11 @@ public class Game{
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       //YOUR CODE HERE
       for (int i = 0; i < party.size(); i++) { //for each member
-          Text.go(1, (i+2)*10);
+          Text.go(1, i*20);
           System.out.print(party.get(i).getName());
-          Text.go(2, (i+2)*10);
+          Text.go(2, i*20);
           System.out.print("HP: " + party.get(i).getHP());
-          Text.go(3, (i+2)*10);
+          Text.go(3, i*20);
           System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
       }
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
