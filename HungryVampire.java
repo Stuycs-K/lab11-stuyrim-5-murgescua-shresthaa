@@ -63,14 +63,14 @@ public class HungryVampire extends Adventurer{
     }
     /*Restores 5 special to other*/
     public String support(Adventurer other){
-      return "Gives a coffee to "+other+" and restores "
-      + other.restoreSpecial(5)+" "+other.getSpecialName();
+      other.setHP(getHP()+3);
+      setHP(getHP()-2);
+      return "Gives condensed lifebloood smoothie to "+other+" and restores 3 HP and 2 HP to self";
+    
     }
-    /*Restores 6 special and 1 hp to self.*/
+    /*Restores 6 special to self.*/
     public String support(){
-      int hp = 1;
-      setHP(getHP()+hp);
-      return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
-      + getSpecialName()+ " and "+hp+" HP";
+      return this+" take a juicy bite of a nearby wolf to restore "+restoreSpecial(6)+" "
+      + getSpecialName();
     }
   }
