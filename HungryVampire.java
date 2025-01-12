@@ -3,21 +3,17 @@ public class HungryVampire extends Adventurer{
 
     /*the other constructors ultimately call the constructor
     *with all parameters.*/
-    public CodeWarrior(String name, int hp){
+    public HungryVampire(String name, int hp){
       super(name,hp);
       lifebloodMax = 15;
       lifeblood = lifebloodMax/2;
     }
 
-    public CodeWarrior(String name, int hp){
-      this(name,hp,"c++");
-    }
-
-    public CodeWarrior(String name){
+    public HungryVampire(String name){
       this(name,30);
     }
 
-    public CodeWarrior(){
+    public HungryVampire(){
       this("Morpheus");
     }
 
@@ -66,7 +62,7 @@ public class HungryVampire extends Adventurer{
       other.setHP(getHP()+3);
       setHP(getHP()-2);
       return "Gives condensed lifebloood smoothie to "+other+" and restores 3 HP and 2 HP to self";
-    
+
     }
     /*Restores 6 special to self.*/
     public String support(){
