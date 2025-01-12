@@ -7,7 +7,7 @@ public class Game{
 
   public static void main(String[] args) {
     //run();
-    //drawBackground();
+    Text.clear();
     Adventurer p1 = new CodeWarrior();
     Adventurer p2 = new SpiceEnthusiast();
     Adventurer p3 = new HungryVampire();
@@ -16,6 +16,7 @@ public class Game{
     partyexample.add(p2);
     partyexample.add(p3);
     drawParty(partyexample, 1);
+    drawBackground();
   }
 
   //Display the borders of your screen that will not change.
@@ -24,7 +25,11 @@ public class Game{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     Text.go(4, 1);
-    System.out.print("Hi");
+    Text.colorize("a", Text.WHITE + Text.BACKGROUND);
+    for (int i = 0; i < 80; i++) {
+      System.out.print(" ");
+    }
+    Text.reset();
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
@@ -55,7 +60,6 @@ public class Game{
 
 
 
-
     //return a random adventurer (choose between all available subclasses)
     //feel free to overload this method to allow specific names/stats.
     public static Adventurer createRandomAdventurer(){
@@ -74,7 +78,6 @@ public class Game{
     public static void drawParty(ArrayList<Adventurer> party,int startRow){
 
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-      //YOUR CODE HERE
       for (int i = 0; i < party.size(); i++) { //for each member
           Text.go(1, i*30);
           System.out.print(party.get(i).getName());
