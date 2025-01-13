@@ -1,39 +1,38 @@
 // code inside class not updated-still CodeWarrior code
 public class Boss extends Adventurer {
-  int caffeine, caffeineMax;
-  String preferredLanguage;
+  int calories, caloriesMax;
 
   /*the other constructors ultimately call the constructor
   *with all parameters.*/
   public Boss(String name, int hp){
     super(name,hp);
-    caffeineMax = 12;
-    caffeine = caffeineMax/2;
+    caloriesMax = 12;
+    calories = caloriesMax/2;
   }
 
   public Boss(String name){
-    this(name,24);
+    this(name,44);
   }
 
   public Boss(){
-    this("Carmack");
+    this("Veggie Monster");
   }
 
   /*The next 8 methods are all required because they are abstract:*/
   public String getSpecialName(){
-    return "caffeine";
+    return "calories";
   }
 
   public int getSpecial(){
-    return caffeine;
+    return calories;
   }
 
   public void setSpecial(int n){
-    caffeine = n;
+    calories = n;
   }
 
   public int getSpecialMax(){
-    return caffeineMax;
+    return caloriesMax;
   }
 
   /*Deal 2-7 damage to opponent, restores 2 caffeine*/
