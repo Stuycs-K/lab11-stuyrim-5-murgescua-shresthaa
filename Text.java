@@ -42,6 +42,11 @@ public class Text{
     System.out.print("\u001b[2J");
   }
 
+  // method to only accept color
+  public static String colorize(int c1){
+    return ("\u001b[" + c1 + "m");
+  }
+
   /*Overloaded Colorize methods.
   c1,c2 and c3 are any color modifiers such as bold/color/background color etc.
   */

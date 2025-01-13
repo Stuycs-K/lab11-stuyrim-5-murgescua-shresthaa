@@ -25,7 +25,7 @@ public class Game{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
     Text.go(4, 1);
-    Text.colorize("a", Text.WHITE + Text.BACKGROUND);
+    System.out.print(Text.colorize(Text.WHITE + Text.BACKGROUND));
     for (int i = 0; i < 80; i++) {
       System.out.print(" ");
     }
