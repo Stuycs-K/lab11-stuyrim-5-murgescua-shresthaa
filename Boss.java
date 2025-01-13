@@ -48,7 +48,7 @@ public class Boss extends Adventurer {
   *Reduces calries by 7.
   */
   public String specialAttack(Adventurer other){
-    if(getSpecial() >= 8){
+    if(getSpecial() >= 7){
       setSpecial(getSpecial()-7);
       int damage = (int)(Math.random()*10+6);
       other.applyDamage(damage);
@@ -58,16 +58,12 @@ public class Boss extends Adventurer {
     }
 
   }
-  /*Restores 5 special to other*/
-  public String support(Adventurer other){
-    return "Gives a coffee to "+other+" and restores "
-    + other.restoreSpecial(5)+" "+other.getSpecialName();
-  }
-  /*Restores 6 special and 1 hp to self.*/
+
+  /*Restores 6 special and 3 hp to self.*/
   public String support(){
-    int hp = 1;
+    int hp = 3;
     setHP(getHP()+hp);
-    return this+" drinks a coffee to restores "+restoreSpecial(6)+" "
+    return this+" eats a pizza to restorea "+restoreSpecial(6)+" "
     + getSpecialName()+ " and "+hp+" HP";
   }
 }
