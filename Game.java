@@ -8,6 +8,7 @@ public class Game{
   public static void main(String[] args) {
     //run();
     Text.clear();
+    //player party
     Adventurer p1 = new CodeWarrior();
     Adventurer p2 = new SpiceEnthusiast();
     Adventurer p3 = new HungryVampire();
@@ -16,6 +17,17 @@ public class Game{
     partyexample.add(p2);
     partyexample.add(p3);
     drawParty(partyexample, 1);
+
+    //enemy party
+    Adventurer e1 = new CodeWarrior("Enemy 1", 30);
+    Adventurer e2 = new SpiceEnthusiast("Enemy 2", 30);
+    Adventurer e3 = new HungryVampire("Enemy 3", 30);
+    ArrayList<Adventurer> partyexample2 = new ArrayList<Adventurer>();
+    partyexample2.add(e1);
+    partyexample2.add(e2);
+    partyexample2.add(e3);
+    drawParty(partyexample2, 27);
+
     drawBackground();
   }
 
@@ -24,11 +36,19 @@ public class Game{
   public static void drawBackground(){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
+    // player line
     Text.go(4, 1);
-    System.out.print(Text.colorize(Text.WHITE + Text.BACKGROUND));
+    System.out.print(Text.colorize(BORDER_COLOR + BORDER_BACKGROUND));
     for (int i = 0; i < 80; i++) {
-      System.out.print(" ");
+      System.out.print("-");
     }
+
+    // opponent line
+    Text.go(26, 1);
+    for (int i = 0; i < 80; i++) {
+      System.out.print("-");
+    }
+    Text.go(30,1);
     Text.reset();
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
@@ -76,14 +96,13 @@ public class Game{
     * ***THIS ROW INTENTIONALLY LEFT BLANK***
     */
     public static void drawParty(ArrayList<Adventurer> party,int startRow){
-
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
       for (int i = 0; i < party.size(); i++) { //for each member
-          Text.go(1, i*30);
+          Text.go(startRow, i*30);
           System.out.print(party.get(i).getName());
-          Text.go(2, i*30);
+          Text.go(startRow+1, i*30);
           System.out.print("HP: " + party.get(i).getHP());
-          Text.go(3, i*30);
+          Text.go(startRow+2, i*30);
           System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
       }
       /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
