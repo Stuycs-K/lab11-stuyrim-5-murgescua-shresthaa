@@ -6,7 +6,7 @@ public class Boss extends Adventurer {
   *with all parameters.*/
   public Boss(String name, int hp){
     super(name,hp);
-    caloriesMax = 12;
+    caloriesMax = 22;
     calories = caloriesMax/2;
   }
 
@@ -15,7 +15,7 @@ public class Boss extends Adventurer {
   }
 
   public Boss(){
-    this("Veggie Monster");
+    this("Albert");
   }
 
   /*The next 8 methods are all required because they are abstract:*/
@@ -35,28 +35,26 @@ public class Boss extends Adventurer {
     return caloriesMax;
   }
 
-  /*Deal 2-7 damage to opponent, restores 2 caffeine*/
+  /*Deal 5-10 damage to opponent, restores 3 calories*/
   public String attack(Adventurer other){
-    int damage = (int)(Math.random()*6)+2;
+    int damage = (int)(Math.random()*6)+5;
     other.applyDamage(damage);
-    restoreSpecial(2);
-    return this + " attacked "+ other + " and dealt "+ damage +
-    " points of damage. They then take a sip of their coffee.";
+    restoreSpecial(3);
+    return this + " launched cheeseburgers at "+ other + " and dealt "+ damage +
+    " points of damage. They then replenish their energy with a cookie.";
   }
 
-  /*Deal 3-12 damage to opponent, only if caffeine is high enough.
-  *Reduces caffeine by 8.
+  /*Deal 6-15 damage to opponent, only if calories are high enough.
+  *Reduces calries by 7.
   */
   public String specialAttack(Adventurer other){
     if(getSpecial() >= 8){
-      setSpecial(getSpecial()-8);
-      int damage = (int)(Math.random()*5+Math.random()*5)+3;
+      setSpecial(getSpecial()-7);
+      int damage = (int)(Math.random()*10+6);
       other.applyDamage(damage);
-      return this + " used their "+preferredLanguage+
-      " skills to hack the matrix. "+
-      " This glitched out "+other+" dealing "+ damage +" points of damage.";
+      return this + " forced "+other+" to eat their veggies, dealing "+ damage +" points of damage.";
     }else{
-      return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
+      return "Eat more, not enough calories to veggie attack. Instead "+attack(other);
     }
 
   }
