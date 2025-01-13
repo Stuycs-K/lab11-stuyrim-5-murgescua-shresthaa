@@ -42,6 +42,12 @@ public class Game{
     for (int i = 0; i < 80; i++) {
       System.out.print("-");
     }
+    for (int idx = 1; idx < 4; idx++) {
+      Text.go(idx, 29);
+      System.out.println("|");
+      Text.go(idx, 59);
+      System.out.println("|");
+    }
 
     // opponent line
     Text.go(26, 1);
@@ -49,6 +55,12 @@ public class Game{
       System.out.print("-");
     }
     Text.go(30,1);
+    for (int idx = 27; idx < 30; idx++) {
+      Text.go(idx, 29);
+      System.out.println("|");
+      Text.go(idx, 59);
+      System.out.println("|");
+    }
     Text.reset();
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
