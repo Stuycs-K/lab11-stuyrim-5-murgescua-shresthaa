@@ -28,6 +28,12 @@ public class Game{
     partyexample2.add(e3);
     drawParty(partyexample2, 27);
 
+    Text.go(5,1);
+    System.out.print(colorByPercent(p1.getHP(), p1.getmaxHP()));
+    System.out.print(colorByPercent(7, 25)); //white
+    System.out.print(colorByPercent(6, 25)); //red
+    Text.reset();
+
     drawBackground();
   }
 
@@ -126,8 +132,17 @@ public class Game{
     String output = String.format("%2s", hp+"")+"/"+String.format("%2s", maxHP+"");
     //COLORIZE THE OUTPUT IF HIGH/LOW:
     // under 25% : red
+    if (((double) hp)/ maxHP < 0.25) {
+      System.out.print(Text.colorize(Text.RED));
+    }
     // under 75% : yellow
+    else if (((double) hp)/ maxHP < 0.75) {
+      System.out.print(Text.colorize(Text.YELLOW));
+    }
     // otherwise : white
+    else {
+      System.out.print(Text.colorize(Text.WHITE));
+    }
     return output;
   }
 
