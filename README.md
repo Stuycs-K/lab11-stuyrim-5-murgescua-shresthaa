@@ -53,6 +53,18 @@ Make a clear list of features that work/dont work
 - **Attack:** Attacks opponent and take a sip of coffee (deals 2-7 damage, restores 2 caffeine)  
 - **Special Attack:** Hacks the matrix (deals 3-12 damage, reduces caffeine by 8)  
 - **Support (self):** Drinks coffee (restores 6 special, restores 1 HP)  
-- **Support (comrades):** Gives comrades a coffee (restores 5 special)  
+- **Support (comrades):** Gives comrades a coffee (restores 5 special)
+
+---
+
+### 4. Boss  
+**Name:** Albert  
+**HP:** 44/44 [^1]  
+**Calories:** 22  
+**Role:** Strong attacker
+
+- **Attack:** Launches cheeseburgers at opponents (deals 5-10 damage, restores 3 calories)
+- **Special Attack:** Forces opponent to eat their veggies (deals 6-15 damage, reduces calories by 7) 
+- **Support (self):** Eats a pizza to restore 6 calories and 3 HP
   
 [^1]: This defines starting HP and HP limit if HP not specified (specified HP must be under the limit).
