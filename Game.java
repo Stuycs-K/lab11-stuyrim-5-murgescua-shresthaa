@@ -28,11 +28,13 @@ public class Game{
     partyexample2.add(e3);
     drawParty(partyexample2, 27);
 
+    /*
     Text.go(5,1);
-    System.out.print(colorByPercent(p1.getHP(), p1.getmaxHP()));
-    System.out.print(colorByPercent(7, 25)); //white
+    System.out.print(colorByPercent(p1.getHP(), p1.getmaxHP()));//white
+    System.out.print(colorByPercent(7, 25)); //yellow
     System.out.print(colorByPercent(6, 25)); //red
     Text.reset();
+    */
 
     drawBackground();
   }
@@ -119,7 +121,12 @@ public class Game{
           Text.go(startRow, i*30);
           System.out.print(party.get(i).getName());
           Text.go(startRow+1, i*30);
-          System.out.print("HP: " + party.get(i).getHP());
+
+          //HP changes colors
+          System.out.print("HP: ");
+          System.out.print(colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP()));
+          Text.reset();
+
           Text.go(startRow+2, i*30);
           System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
       }
