@@ -13,9 +13,9 @@ public class Game{
     Adventurer p2 = new SpiceEnthusiast();
     Adventurer p3 = new HungryVampire();
     ArrayList<Adventurer> partyexample = new ArrayList<Adventurer>();
-    partyexample.add(p1);
-    partyexample.add(p2);
-    partyexample.add(p3);
+    partyexample.add(createRandomAdventurer("Igret", "Califore", "Simone"));
+    partyexample.add(createRandomAdventurer("Gorwn", "Corle", "Koelk"));
+    partyexample.add(createRandomAdventurer("Okelp", "Sleocvb", "Woker"));
     drawParty(partyexample, 1);
 
     //enemy party
@@ -23,9 +23,9 @@ public class Game{
     Adventurer e2 = new SpiceEnthusiast("Enemy 2", 30);
     Adventurer e3 = new HungryVampire("Enemy 3", 30);
     ArrayList<Adventurer> partyexample2 = new ArrayList<Adventurer>();
-    partyexample2.add(e1);
-    partyexample2.add(e2);
-    partyexample2.add(e3);
+    partyexample2.add(createRandomAdventurer());
+    partyexample2.add(createRandomAdventurer());
+    partyexample2.add(createRandomAdventurer());
     drawParty(partyexample2, 27);
 
     /*
@@ -103,7 +103,29 @@ public class Game{
     //return a random adventurer (choose between all available subclasses)
     //feel free to overload this method to allow specific names/stats.
     public static Adventurer createRandomAdventurer(){
-      return new CodeWarrior("Bob"+(int)(Math.random()*100));
+      ArrayList<Adventurer> adventurers = new ArrayList<Adventurer>();
+      Adventurer a1 = new CodeWarrior("Hubert"+(int)(Math.random()*100));
+      Adventurer a2 = new SpiceEnthusiast("Emily"+(int)(Math.random()*100));
+      Adventurer a3 = new HungryVampire("Count"+(int)(Math.random()*100));
+      adventurers.add(a1);
+      adventurers.add(a2);
+      adventurers.add(a3);
+      Random rng = new Random();
+      int idx = rng.nextInt(3);
+      return adventurers.get(idx);
+    }
+
+    public static Adventurer createRandomAdventurer(String name1, String name2, String name3){
+      ArrayList<Adventurer> adventurers = new ArrayList<Adventurer>();
+      Adventurer a1 = new CodeWarrior(name1);
+      Adventurer a2 = new SpiceEnthusiast(name2);
+      Adventurer a3 = new HungryVampire(name3);
+      adventurers.add(a1);
+      adventurers.add(a2);
+      adventurers.add(a3);
+      Random rng = new Random();
+      int idx = rng.nextInt(3);
+      return adventurers.get(idx);
     }
 
     /*Display a List of 2-4 adventurers on the rows row through row+3 (4 rows max)
