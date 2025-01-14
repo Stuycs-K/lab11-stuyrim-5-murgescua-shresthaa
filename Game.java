@@ -7,6 +7,9 @@ public class Game{
 
   public static void main(String[] args) {
     //run();
+
+    // Testing game interface
+    /*
     Text.clear();
     //player party
     Adventurer p1 = new CodeWarrior();
@@ -28,26 +31,38 @@ public class Game{
     partyexample2.add(createRandomAdventurer());
     drawParty(partyexample2, 27);
 
-    /*
-    Text.go(5,1);
-    System.out.print(colorByPercent(p1.getHP(), p1.getmaxHP()));//white
-    System.out.print(colorByPercent(7, 25)); //yellow
-    System.out.print(colorByPercent(6, 25)); //red
-    Text.reset();
-    */
+    // Tests for colorByPercent()
+    // Text.go(5,1);
+    // System.out.print(colorByPercent(p1.getHP(), p1.getmaxHP()));//white
+    // System.out.print(colorByPercent(7, 25)); //yellow
+    // System.out.print(colorByPercent(6, 25)); //red
+    // Text.reset();
 
     drawBackground();
+    */
 
     Text.clear();
     Text.go(1,1);
-    System.out.println("Welcome to... Food Fight!");
-    System.out.print("Directions: You, commander of the three heroes, must fight against the monsters in the arena and expand your prestige. Do you want to choose the heroes' names? (y/n) ");
-    String chooseName = userInput(new Scanner(System.in), 5, 1);
+    System.out.println("Welcome to... FOOD FIGHT!");
+    System.out.print("Directions: You, commander of the three heroes, must fight against the monsters in the arena and expand your prestige. Do you want to choose the heroes' names? (y/n)  ");
+    // CHANGE X Y OF CHOOSENAME BC IT CHANGES BASED ON TERMINAL SIZE -- DO AFTER TEXTBOX() AND DRAWTEXT()
+    Scanner scan  = new Scanner(System.in);
+    String chooseName = userInput(scan, 4, 7);
     if (chooseName.equals("y")) {
-      System.out.print("Okay! Type in your first name: ");
+      String str = "Okay! Type in your first hero's name: ";
+      System.out.print(str);
+      String name1 = userInput(scan, 5, str.length() + 1);
+
+      str = "Type in your second hero's name: ";
+      System.out.print(str);
+      String name2 = userInput(scan, 6, str.length() + 1);
+
+      str = "Type in your third hero's name: ";
+      System.out.print(str);
+      String name3 = userInput(scan, 7, str.length() + 1);
     }
     else if (chooseName.equals("n")) {
-      System.out.print("Your team names are: ");
+      System.out.print("Okay! Your heroes' names are: ");
     }
     else {
       System.out.println("Please type a valid input. (y/n) ");
@@ -230,8 +245,6 @@ public class Game{
       Text.showCursor();
       String input = in.nextLine();
 
-      //clear the text that was written
-      Text.clear();
       return input;
   }
 
