@@ -63,7 +63,14 @@ public class Boss extends Adventurer {
   public String support(){
     int hp = 3;
     setHP(getHP()+hp);
-    return this+" eats a pizza to restorea "+restoreSpecial(6)+" "
+    return this+" eats a pizza to restore "+restoreSpecial(6)+" "
+    + getSpecialName()+ " and "+hp+" HP";
+  }
+  
+  public String support(Adventurer other){
+    int hp = 3;
+    setHP(getHP()+hp);
+    return this+" eats a pizza to restore "+restoreSpecial(6)+" "
     + getSpecialName()+ " and "+hp+" HP";
   }
 }

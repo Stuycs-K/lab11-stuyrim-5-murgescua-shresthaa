@@ -266,7 +266,21 @@ public class Game{
     //start with 1 boss and modify the code to allow 2-3 adventurers later.
     ArrayList<Adventurer>enemies = new ArrayList<Adventurer>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    //YOUR CODE HERE
+    Random rng = new Random();
+    int x = rng.nextInt(3);
+    if (x == 0){
+      Adventurer boss = new Boss();
+      enemies.add(boss);
+    }
+    else if (x == 1){
+      enemies.add(createRandomAdventurer());
+      enemies.add(createRandomAdventurer());
+    }
+    else {
+      enemies.add(createRandomAdventurer());
+      enemies.add(createRandomAdventurer());
+      enemies.add(createRandomAdventurer());
+    }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
     //Adventurers you control:
