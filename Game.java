@@ -50,7 +50,7 @@ public class Game{
     String chooseName = userInput(scan, 4, 7);
     if (chooseName.equals("y")) {
       String str = "Okay! Type in your first hero's name: ";
-      System.out.print(str);
+      drawText(str, 5, 1);
       String name1 = userInput(scan, 5, str.length() + 1);
 
       str = "Type in your second hero's name: ";
@@ -109,6 +109,8 @@ public class Game{
   public static void drawText(String s,int startRow, int startCol){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
+    Text.go(startRow, startCol);
+    System.out.print(s);
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
