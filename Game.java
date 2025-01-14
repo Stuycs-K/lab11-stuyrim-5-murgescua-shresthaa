@@ -37,6 +37,21 @@ public class Game{
     */
 
     drawBackground();
+
+    Text.clear();
+    Text.go(1,1);
+    System.out.println("Welcome to... Food Fight!");
+    System.out.print("Directions: You, commander of the three heroes, must fight against the monsters in the arena and expand your prestige. Do you want to choose the heroes' names? (y/n) ");
+    String chooseName = userInput(new Scanner(System.in), 5, 1);
+    if (chooseName.equals("y")) {
+      System.out.print("Okay! Type in your first name: ");
+    }
+    else if (chooseName.equals("n")) {
+      System.out.print("Your team names are: ");
+    }
+    else {
+      System.out.println("Please type a valid input. (y/n) ");
+    }
   }
 
   //Display the borders of your screen that will not change.
@@ -194,13 +209,29 @@ public class Game{
 
   public static String userInput(Scanner in){
       //Move cursor to prompt location
+      Text.hideCursor();
+      Text.go(1,1);
 
       //show cursor
-
+      Text.showCursor();
       String input = in.nextLine();
 
       //clear the text that was written
+      Text.clear();
+      return input;
+  }
 
+  public static String userInput(Scanner in, int x, int y){
+      //Move cursor to prompt location
+      Text.hideCursor();
+      Text.go(x, y);
+
+      //show cursor
+      Text.showCursor();
+      String input = in.nextLine();
+
+      //clear the text that was written
+      Text.clear();
       return input;
   }
 
