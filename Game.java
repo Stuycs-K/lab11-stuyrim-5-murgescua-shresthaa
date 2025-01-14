@@ -186,7 +186,7 @@ public class Game{
 
     drawBackground();
 
-    //draw player party
+    //drawParty();
 
     //draw enemy party
 
