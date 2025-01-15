@@ -7,9 +7,8 @@ public class Game{
 
   public static void main(String[] args) {
     //run();
-
-    // Testing game interface
     /*
+    // Testing game interface
     Text.clear();
     //player party
     Adventurer p1 = new CodeWarrior();
@@ -29,7 +28,7 @@ public class Game{
     partyexample2.add(createRandomAdventurer());
     partyexample2.add(createRandomAdventurer());
     partyexample2.add(createRandomAdventurer());
-    drawParty(partyexample2, 27);
+    drawParty(partyexample2, 24);
 
     // Tests for colorByPercent()
     // Text.go(5,1);
@@ -41,6 +40,7 @@ public class Game{
     drawBackground();
     */
 
+    /*
     Text.clear();
     Text.go(1,1);
     System.out.println("Welcome to... FOOD FIGHT!");
@@ -67,6 +67,12 @@ public class Game{
     else {
       System.out.println("Please type a valid input. (y/n) ");
     }
+    */
+    String str = "";
+    for (int i = 0; i < 100; i++) {
+      str += "" + i;
+    }
+    TextBox(5,1,80,16,str);
   }
 
   //Display the borders of your screen that will not change.
@@ -88,20 +94,28 @@ public class Game{
     }
 
     // opponent line
-    Text.go(26, 1);
+    Text.go(23, 1);
     for (int i = 0; i < 80; i++) {
       System.out.print("-");
     }
-    Text.go(30,1);
-    for (int idx = 27; idx < 30; idx++) {
+    Text.go(24,1);
+    for (int idx = 24; idx < 27; idx++) {
       Text.go(idx, 29);
       System.out.println("|");
       Text.go(idx, 59);
       System.out.println("|");
     }
+
+    // command line
+    Text.go(27, 1);
+    for (int i = 0; i < 80; i++) {
+      System.out.print("-");
+    }
     Text.reset();
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
+
+
 
   //Display a line of text starting at
   //(columns and rows start at 1 (not zero) in the terminal)
@@ -127,10 +141,18 @@ public class Game{
   public static void TextBox(int row, int col, int width, int height, String text){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
+    Text.go(row, col);
+    while (text.length() != 0) {
+      if (text.length() > width) {
+        drawText(text.substring(0, width), row, col);
+        text = text.substring(width);
+        Text.go(row + 1, col);
+      } else {
+        drawText(text, row, col);
+      }
+    }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
-
-
 
     //return a random adventurer (choose between all available subclasses)
     //feel free to overload this method to allow specific names/stats.
