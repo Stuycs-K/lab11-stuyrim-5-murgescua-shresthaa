@@ -267,10 +267,9 @@ public class Game{
 
     drawBackground();
 
-    drawParty();
+    //drawParty();
 
-    //draw enemy party
-    drawEnemyParty();
+    //drawEnemyParty();
   }
 
   public static String userInput(Scanner in){
