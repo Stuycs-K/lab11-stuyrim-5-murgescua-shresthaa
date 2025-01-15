@@ -6,7 +6,9 @@ public class Game{
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
-    //run();
+    run();
+
+    /*
     // Testing game interface
     Text.clear();
     //player party
@@ -37,6 +39,7 @@ public class Game{
     // Text.reset();
 
     drawBackground();
+    */
 
     /*
     Text.clear();
@@ -66,11 +69,15 @@ public class Game{
       System.out.println("Please type a valid input. (y/n) ");
     }
     */
+
+    /*
+    //TextBox() test for str of integers 1-100
     String str = "";
-    for (int i = 0; i < 100; i++) {
+    for (int i = 1; i <= 100; i++) {
       str += "" + i;
     }
     TextBox(5,1,80,16,str);
+    */
   }
 
   //Display the borders of your screen that will not change.
@@ -193,6 +200,26 @@ public class Game{
     */
     public static void drawParty(ArrayList<Adventurer> party,int startRow){
       /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+      Text.go(1,1);
+      for (int i = 0; i < party.size(); i++) { //for each member
+          Text.go(startRow, i*30);
+          System.out.print(party.get(i).getName());
+          Text.go(startRow+1, i*30);
+
+          //HP changes colors
+          System.out.print("HP: ");
+          System.out.print(colorByPercent(party.get(i).getHP(), party.get(i).getmaxHP()));
+          Text.reset();
+
+          Text.go(startRow+2, i*30);
+          System.out.print(party.get(i).getSpecialName() + ": " + party.get(i).getSpecial());
+      }
+      /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+    }
+
+    public static void drawEnemyParty(ArrayList<Adventurer> party,int startRow){
+      /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+      Text.go(24,1);
       for (int i = 0; i < party.size(); i++) { //for each member
           Text.go(startRow, i*30);
           System.out.print(party.get(i).getName());
@@ -240,10 +267,10 @@ public class Game{
 
     drawBackground();
 
-    //drawParty();
+    drawParty();
 
     //draw enemy party
-
+    drawEnemyParty();
   }
 
   public static String userInput(Scanner in){
