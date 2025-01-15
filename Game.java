@@ -290,8 +290,7 @@ public class Game{
     //start with 1 boss and modify the code to allow 2-3 adventurers later.
     ArrayList<Adventurer>enemies = new ArrayList<Adventurer>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    Random rng = new Random();
-    int x = rng.nextInt(3);
+    int x = (int)(Math.random()*4);
     if (x == 0){
       Adventurer boss = new Boss();
       enemies.add(boss);
@@ -311,7 +310,21 @@ public class Game{
     //Make an ArrayList of Adventurers and add 2-4 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    //YOUR CODE HERE
+    int z = (int)(Math.random()*4)+2;
+    if (x == 2){
+      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer());
+    }
+    else if (x == 3){
+      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer());
+    }
+    else {
+      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer());
+    }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
     boolean partyTurn = true;
