@@ -7,7 +7,6 @@ public class Game{
 
   public static void main(String[] args) {
     //run();
-    /*
     // Testing game interface
     Text.clear();
     //player party
@@ -38,7 +37,6 @@ public class Game{
     // Text.reset();
 
     drawBackground();
-    */
 
     /*
     Text.clear();
@@ -146,9 +144,11 @@ public class Game{
       if (text.length() > width) {
         drawText(text.substring(0, width), row, col);
         text = text.substring(width);
-        Text.go(row + 1, col);
+        row++;
+        Text.go(row, col);
       } else {
         drawText(text, row, col);
+        text = "";
       }
     }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
