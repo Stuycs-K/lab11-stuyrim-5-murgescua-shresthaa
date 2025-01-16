@@ -263,13 +263,13 @@ public class Game{
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.
-  public static void drawScreen(){
+  public static void drawScreen(ArrayList<Adventurer> party, ArrayList<Adventurer> enemies){
 
     drawBackground();
 
-    //drawParty();
+    drawParty(party, 1);
 
-    //drawEnemyParty();
+    drawEnemyParty(enemies, 24);
   }
 
   public static String userInput(Scanner in){
@@ -314,7 +314,7 @@ public class Game{
     //Make an ArrayList of Adventurers and add 1-3 enemies to it.
     //If only 1 enemy is added it should be the boss class.
     //start with 1 boss and modify the code to allow 2-3 adventurers later.
-    ArrayList<Adventurer>enemies = new ArrayList<Adventurer>();
+    ArrayList<Adventurer> enemies = new ArrayList<Adventurer>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     int x = (int)(Math.random()*4);
     if (x == 0){
@@ -338,18 +338,17 @@ public class Game{
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     int z = (int)(Math.random()*4)+2;
     if (x == 2){
-      party.add(createRandomAdventurer());
-      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer("Igret", "Califore", "Simone"));
+      party.add(createRandomAdventurer("Lidia", "Abdo", "Marianne"));
     }
     else if (x == 3){
-      party.add(createRandomAdventurer());
-      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer("Ilhim", "William", "Coral"));
+      party.add(createRandomAdventurer("Violet", "Matthew", "Evelyn"));
     }
     else {
-      party.add(createRandomAdventurer());
-      party.add(createRandomAdventurer());
-      party.add(createRandomAdventurer());
-      party.add(createRandomAdventurer());
+      party.add(createRandomAdventurer("Amos", "Narine", "Hamid"));
+      party.add(createRandomAdventurer("Lavinia", "Juhan", "Medea"));
+      party.add(createRandomAdventurer("Mikael", "Marcela", "Eochaid"));
     }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
@@ -362,12 +361,14 @@ public class Game{
     //Draw the window border
 
     //You can add parameters to draw screen!
-    drawScreen();//initial state.
+    drawScreen(party, enemies);//initial state.
 
     //Main loop
+    Text.go(28,1);
 
     //display this prompt at the start of the game.
     String preprompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+    System.out.print(preprompt);
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
@@ -383,6 +384,7 @@ public class Game{
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
+          System.out.print(party.get(whichPlayer).attack(enemies.get(whichOpponent)));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
@@ -448,7 +450,7 @@ public class Game{
       }
 
       //display the updated screen after input has been processed.
-      drawScreen();
+      drawScreen(party, enemies);
 
 
     }//end of main game loop
