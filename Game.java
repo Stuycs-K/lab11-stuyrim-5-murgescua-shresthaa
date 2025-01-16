@@ -6,9 +6,8 @@ public class Game{
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
-    run();
+    // run();
 
-    /*
     // Testing game interface
     Text.clear();
     //player party
@@ -37,9 +36,6 @@ public class Game{
     // System.out.print(colorByPercent(7, 25)); //yellow
     // System.out.print(colorByPercent(6, 25)); //red
     // Text.reset();
-
-    drawBackground();
-    */
 
     /*
     Text.clear();
@@ -73,11 +69,13 @@ public class Game{
     /*
     //TextBox() test for str of integers 1-100
     String str = "";
-    for (int i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 1000; i++) {
       str += "" + i;
     }
-    TextBox(5,1,80,16,str);
+    TextBox(5,1,80,18,str);
     */
+
+    //drawBackground();
   }
 
   //Display the borders of your screen that will not change.
@@ -146,17 +144,28 @@ public class Game{
   public static void TextBox(int row, int col, int width, int height, String text){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
-    Text.go(row, col);
-    while (text.length() != 0) {
+    int row2 = row;
+    while (text.length() > 0 && row2 < row + height) {
       if (text.length() > width) {
-        drawText(text.substring(0, width), row, col);
+        Text.go(row2, col);
+        drawText(text.substring(0, width), row2, col);
         text = text.substring(width);
-        row++;
-        Text.go(row, col);
       } else {
-        drawText(text, row, col);
+        String space = "";
+        for (int i = text.length(); i < width; i++) {
+          space += " ";
+        }
+        drawText(text + space, row2, col);
         text = "";
       }
+      row2++;
+    }
+    while (row2 < row + height) {
+      Text.go(row2, col);
+      for (int i = 1; i < width + 1; i++) {
+        drawText(" ", row2, i);
+      }
+      row2++;
     }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
@@ -375,7 +384,7 @@ public class Game{
       input = userInput(in);
 
       //example debug statment
-      TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
+      //TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
 
       //display event based on last turn's input
       if(partyTurn){
@@ -390,6 +399,7 @@ public class Game{
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
+          System.out.print(party.get(whichPlayer).specialAttack(enemies.get(whichOpponent)));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
@@ -397,6 +407,7 @@ public class Game{
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
+          System.out.print(party.get(whichPlayer).support(party.get(whichPlayer)));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
@@ -411,10 +422,10 @@ public class Game{
           String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
 
 
-        }else{
+        } else{
           //This is after the player's turn, and allows the user to see the enemy turn
           //Decide where to draw the following prompt:
-          String prompt = "press enter to see monster's turn";
+          String prompt = "Press enter to see monster's turn";
 
           partyTurn = false;
           whichOpponent = 0;
@@ -432,7 +443,7 @@ public class Game{
 
 
         //Decide where to draw the following prompt:
-        String prompt = "press enter to see next turn";
+        String prompt = "Press enter to see next turn";
 
         whichOpponent++;
 
