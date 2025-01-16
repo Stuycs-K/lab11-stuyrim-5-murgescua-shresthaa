@@ -383,15 +383,15 @@ public class Game{
     drawScreen(party, enemies);//initial state.
 
     //Main loop
-    Text.go(28,1);
 
     //display this prompt at the start of the game.
-    String preprompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
-    System.out.print(preprompt);
+    String preprompt = "Enter command for "+party.get(whichPlayer)+": attack(a)/special(sp)/support(su)/quit(q)";
+    drawText(preprompt, 28, 1);
+    String text = "";
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
-      input = userInput(in);
+      input = userInput(in, 29, 1);
 
       //example debug statment
       //TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
@@ -403,13 +403,13 @@ public class Game{
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          System.out.print(party.get(whichPlayer).attack(enemies.get(whichOpponent)));
+          text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          System.out.print(party.get(whichPlayer).specialAttack(enemies.get(whichOpponent)));
+           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
@@ -417,9 +417,11 @@ public class Game{
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          System.out.print(party.get(whichPlayer).support(party.get(whichPlayer)));
+          text += party.get(whichPlayer).support(party.get(whichPlayer));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
+
+        TextBox(5, 1, 80, 18, text);
 
         //You should decide when you want to re-ask for user input
         //If no errors:
@@ -429,13 +431,15 @@ public class Game{
         if(whichPlayer < party.size()){
           //This is a player turn.
           //Decide where to draw the following prompt:
-          String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+          String prompt = "Enter command for "+party.get(whichPlayer)+": attack(a)/special(sp)/support(su)/quit(q)";
+          drawText(prompt, 28, 1);
 
 
-        } else{
+        } else {
           //This is after the player's turn, and allows the user to see the enemy turn
           //Decide where to draw the following prompt:
           String prompt = "Press enter to see monster's turn";
+          drawText(prompt, 28, 1);
 
           partyTurn = false;
           whichOpponent = 0;
@@ -449,11 +453,15 @@ public class Game{
         //Enemy action choices go here!
         /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
         //YOUR CODE HERE
+        System.out.print(Text.colorize(Text.RED));
+        text += enemies.get(whichOpponent).attack(party.get(0));
         /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+        TextBox(5, 1, 80, 18, text);
 
-
+        System.out.print(Text.colorize(BORDER_COLOR));
         //Decide where to draw the following prompt:
         String prompt = "Press enter to see next turn";
+        drawText(prompt, 28, 1);
 
         whichOpponent++;
 
