@@ -6,8 +6,9 @@ public class Game{
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
-    // run();
+    run();
 
+    /*
     // Testing game interface
     Text.clear();
     //player party
@@ -29,6 +30,7 @@ public class Game{
     partyexample2.add(createRandomAdventurer());
     partyexample2.add(createRandomAdventurer());
     drawParty(partyexample2, 24);
+    */
 
     // Tests for colorByPercent()
     // Text.go(5,1);
@@ -67,9 +69,17 @@ public class Game{
     */
 
     /*
-    //TextBox() test for str of integers 1-100
+    // 1-1000 fills up all the space at around 160-ish
+    // testing for overflow and rewriting
     String str = "";
     for (int i = 1; i <= 1000; i++) {
+      str += "" + i;
+    }
+    TextBox(5,1,80,18,str);
+
+    //TextBox() test for str of integers 1-100
+    str = "";
+    for (int i = 1; i <= 100; i++) {
       str += "" + i;
     }
     TextBox(5,1,80,18,str);
