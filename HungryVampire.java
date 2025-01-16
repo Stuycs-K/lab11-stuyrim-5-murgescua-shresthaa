@@ -39,7 +39,7 @@ public class HungryVampire extends Adventurer{
       other.applyDamage(damage);
       restoreSpecial(2);
       return this + " attacked "+ other + " and dealt "+ damage +
-      " points of damage. They then take a sip from their jug of lifeblood.";
+      " points of damage. They then take a sip from their jug of lifeblood. ";
     }
 
     /*Deal 8 damage to opponent, only if lifeblood is high enough.
@@ -51,22 +51,21 @@ public class HungryVampire extends Adventurer{
         setHP(getHP()+2);
         int damage = 8;
         other.applyDamage(damage);
-        return this + " used their vampire moves to suck the blood out of "+other+" dealing "+ damage +" points of damage.";
+        return this + " used their vampire moves to suck the blood out of "+other+" dealing "+ damage +" points of damage. ";
       }else{
         return "Not enough lifeblood to use this ultimate attack. Instead "+attack(other);
       }
-
     }
     /*Restores 3 HP to other, loses 2 HP*/
     public String support(Adventurer other){
       other.setHP(other.getHP()+3);
       setHP(getHP()-2);
-      return this + " gives condensed lifebloood smoothie to "+other+" and restores 3 HP to them at the cost of 2 HP";
+      return this + " gives condensed lifebloood smoothie to "+other+" and restores 3 HP to them at the cost of 2 HP. ";
 
     }
     /*Restores 6 special to self.*/
     public String support(){
       return this+" takes a juicy bite of a nearby wolf to restore "+restoreSpecial(6)+ " "
-      + getSpecialName();
+      + getSpecialName() + ". ";
     }
   }

@@ -40,7 +40,7 @@ public class SpiceEnthusiast extends Adventurer {
       other.applyDamage(damage);
       restoreSpecial(2);
       return this + " throws spices at " + other + " and dealt " + damage
-      + " points of damage. " + other + " tears up.";
+      + " points of damage. " + other + " tears up. ";
     }
 
     /*Deal 5-13 damage to opponent, only if sprays is high enough.
@@ -51,7 +51,7 @@ public class SpiceEnthusiast extends Adventurer {
         int damage = (int) ((Math.random() * 6) + (Math.random() * 6)) + 5;
         other.applyDamage(damage);
         return this + " used their gigantic pepper spray on " + other + ". Spiciness attacks "
-        + other + " dealing " + damage + " points of damage.";
+        + other + " dealing " + damage + " points of damage. ";
       } else {
         return "Not enough sprays to use the gigantic pepper spray. Instead " + attack(other);
       }
@@ -62,12 +62,12 @@ public class SpiceEnthusiast extends Adventurer {
       int hp = 1;
       setHP(getHP() + hp);
       return this + " drinks a bowl of hot flaming soup to reinvigorate " + restoreSpecial(4) + " "
-      + getSpecialName() + " and " + hp + " HP.";
+      + getSpecialName() + " and " + hp + " HP. ";
     }
 
     /*Restores 6 special to other*/
     public String support(Adventurer other){
       return this + " gives a pack of spicy sticks to " + other + " and restores "
-      + other.restoreSpecial(6) + " " + other.getSpecialName();
+      + other.restoreSpecial(6) + " " + other.getSpecialName() + ". ";
     }
   }

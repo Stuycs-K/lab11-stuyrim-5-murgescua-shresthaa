@@ -417,7 +417,9 @@ public class Game{
           //assume the value that follows su  is an integer.
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          text += party.get(whichPlayer).support(party.get(whichPlayer));
+          int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
+          System.out.print(whichPlayer);
+          text += party.get(whichPlayer).support(party.get(playerSupported));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
