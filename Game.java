@@ -2,7 +2,7 @@ import java.util.*;
 public class Game{
   private static final int WIDTH = 80;
   private static final int HEIGHT = 30;
-  private static final int BORDER_COLOR = Text.BLACK;
+  private static final int BORDER_COLOR = Text.WHITE;
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
@@ -370,7 +370,7 @@ public class Game{
       party.add(createRandomAdventurer("Mikael", "Marcela", "Eochaid"));
     }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
+    ArrayList<Adventurer> deadParty = new ArrayList<>();
     boolean partyTurn = true;
     int whichPlayer = 0;
     int whichOpponent = 0;
@@ -428,7 +428,6 @@ public class Game{
         //You should decide when you want to re-ask for user input
         //If no errors:
         whichPlayer++;
-
 
         if(whichPlayer < party.size()){
           //This is a player turn.
