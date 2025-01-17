@@ -355,15 +355,16 @@ public class Game{
     //Make an ArrayList of Adventurers and add 2-4 Adventurers to it.
     ArrayList<Adventurer> party = new ArrayList<>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    int z = (int)(Math.random()*4)+2;
+    int z = (int)(Math.random()*3)+2;
     if (x == 2){
       party.add(createRandomAdventurer("Igret", "Califore", "Simone"));
       party.add(createRandomAdventurer("Lidia", "Abdo", "Marianne"));
     }
-    else if (x == 3){
+    /* else if (x == 3){
       party.add(createRandomAdventurer("Ilhim", "William", "Coral"));
       party.add(createRandomAdventurer("Violet", "Matthew", "Evelyn"));
     }
+    */
     else {
       party.add(createRandomAdventurer("Amos", "Narine", "Hamid"));
       party.add(createRandomAdventurer("Lavinia", "Juhan", "Medea"));
