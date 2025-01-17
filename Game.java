@@ -96,7 +96,7 @@ public class Game{
     // player line
     Text.go(4, 1);
     System.out.print(Text.colorize(BORDER_COLOR + BORDER_BACKGROUND));
-    for (int i = 0; i < 80; i++) {
+    for (int i = 0; i < WIDTH; i++) {
       System.out.print("-");
     }
     for (int idx = 1; idx < 4; idx++) {
@@ -108,7 +108,7 @@ public class Game{
 
     // opponent line
     Text.go(23, 1);
-    for (int i = 0; i < 80; i++) {
+    for (int i = 0; i < WIDTH; i++) {
       System.out.print("-");
     }
     Text.go(24,1);
@@ -121,7 +121,7 @@ public class Game{
 
     // command line
     Text.go(27, 1);
-    for (int i = 0; i < 80; i++) {
+    for (int i = 0; i < WIDTH; i++) {
       System.out.print("-");
     }
     Text.reset();
