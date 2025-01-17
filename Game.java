@@ -403,13 +403,13 @@ public class Game{
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          text += party.get(whichPlayer).attack(enemies.get(whichOpponent)) + "\n";
+          text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent)) + "\n";
+           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
@@ -418,10 +418,11 @@ public class Game{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
-          text += party.get(whichPlayer).support(party.get(playerSupported)) + "\n";
+          text += party.get(whichPlayer).support(party.get(playerSupported));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
+        TextBox(28, 1, 80, 2, " ");
         TextBox(5, 1, 80, 18, text);
 
         //You should decide when you want to re-ask for user input
@@ -456,11 +457,11 @@ public class Game{
           for (int enemymate = 0; enemymate < enemies.size(); enemymate++) {
             Adventurer enemymateAdv = enemies.get(enemymate);
             if (enemymateAdv.getHP() < (enemymateAdv.getmaxHP() * 0.2)) {
-              enemyText += enemies.get(whichOpponent).support(enemymateAdv) + "\n";
+              enemyText += enemies.get(whichOpponent).support(enemymateAdv);
             }
             else {
               int randomHero = (int) (Math.random() * party.size());
-              enemyText += enemies.get(whichOpponent).attack(party.get(randomHero)) + "\n";
+              enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
             }
           }
         }
