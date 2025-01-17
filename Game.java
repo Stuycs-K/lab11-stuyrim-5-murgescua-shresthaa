@@ -356,7 +356,7 @@ public class Game{
     ArrayList<Adventurer> party = new ArrayList<>();
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     int z = (int)(Math.random()*3)+2;
-    if (x == 2){
+    if (z == 2){
       party.add(createRandomAdventurer("Igret", "Califore", "Simone"));
       party.add(createRandomAdventurer("Lidia", "Abdo", "Marianne"));
     }
