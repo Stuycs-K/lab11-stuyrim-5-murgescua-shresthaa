@@ -151,6 +151,8 @@ public class Game{
   *@param width the number of characters per row
   *@param height the number of rows
   */
+
+  // MINOR FIX to-do: words not fitting on one line, spilling on to next
   public static void TextBox(int row, int col, int width, int height, String text){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
     //YOUR CODE HERE
