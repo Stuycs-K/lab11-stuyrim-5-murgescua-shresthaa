@@ -463,6 +463,7 @@ public class Game{
               int randomHero = (int) (Math.random() * party.size());
               enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
             }
+            whichOpponent++;
           }
         }
         /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -471,10 +472,9 @@ public class Game{
 
         System.out.print(Text.colorize(BORDER_COLOR));
         //Decide where to draw the following prompt:
+        TextBox(28, 1, 80, 2, " ");
         String prompt = "Press ENTER to see next turn";
         drawText(prompt, 28, 1);
-
-        whichOpponent++;
 
       }//end of one enemy.
 
