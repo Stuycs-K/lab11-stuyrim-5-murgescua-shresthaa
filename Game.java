@@ -403,13 +403,13 @@ public class Game{
         if(input.equals("attack") || input.equals("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-          text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
+          text += party.get(whichPlayer).attack(enemies.get(whichOpponent)) + "\n";
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.equals("special") || input.equals("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
-           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
+           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent)) + "\n";
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
@@ -418,8 +418,7 @@ public class Game{
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
           //YOUR CODE HERE
           int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
-          System.out.print(whichPlayer);
-          text += party.get(whichPlayer).support(party.get(playerSupported));
+          text += party.get(whichPlayer).support(party.get(playerSupported)) + "\n";
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
 
@@ -436,33 +435,42 @@ public class Game{
           String prompt = "Enter command for "+party.get(whichPlayer)+": attack(a)/special(sp)/support(su)/quit(q)";
           drawText(prompt, 28, 1);
 
-
         } else {
           //This is after the player's turn, and allows the user to see the enemy turn
           //Decide where to draw the following prompt:
-          String prompt = "Press enter to see monster's turn                                                                     ";
+          String prompt = "Press ENTER to see monster's turn";
           drawText(prompt, 28, 1);
-
           partyTurn = false;
           whichOpponent = 0;
         }
         //done with one party member
       }else{
         //not the party turn!
+        String enemyText = "";
 
-
-        //enemy attacks a randomly chosen person with a randomly chosen attack.z`
+        //enemy attacks a randomly chosen person with a randomly chosen attack.
         //Enemy action choices go here!
         /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
         //YOUR CODE HERE
-        System.out.print(Text.colorize(Text.RED));
-        text += enemies.get(whichOpponent).attack(party.get(0));
+        if (enemies.size() > whichOpponent) {
+          for (int enemymate = 0; enemymate < enemies.size(); enemymate++) {
+            Adventurer enemymateAdv = enemies.get(enemymate);
+            if (enemymateAdv.getHP() < (enemymateAdv.getmaxHP() * 0.2)) {
+              enemyText += enemies.get(whichOpponent).support(enemymateAdv) + "\n";
+            }
+            else {
+              int randomHero = (int) (Math.random() * party.size());
+              enemyText += enemies.get(whichOpponent).attack(party.get(randomHero)) + "\n";
+            }
+          }
+        }
         /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-        TextBox(5, 1, 80, 18, text);
+        System.out.print(Text.colorize(Text.RED));
+        TextBox(5, 1, 80, 18, enemyText);
 
         System.out.print(Text.colorize(BORDER_COLOR));
         //Decide where to draw the following prompt:
-        String prompt = "Press enter to see next turn";
+        String prompt = "Press ENTER to see next turn";
         drawText(prompt, 28, 1);
 
         whichOpponent++;
@@ -477,7 +485,8 @@ public class Game{
         turn++;
         partyTurn=true;
         //display this prompt before player's turn
-        String prompt = "Enter command for "+party.get(whichPlayer)+": attack/special/quit";
+        String prompt = "Enter command for "+party.get(whichPlayer)+": attack(a)/special(sp)/support(su)/quit(q)";
+        drawText(prompt, 28, 1);
       }
 
       //display the updated screen after input has been processed.
