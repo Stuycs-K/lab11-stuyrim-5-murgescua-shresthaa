@@ -225,6 +225,7 @@ public class Game{
       for (int i = 0; i < party.size(); i++) { //for each member
           Text.go(startRow, i*30);
           System.out.print(party.get(i).getName());
+          
           Text.go(startRow+1, i*30);
 
           //HP changes colors
@@ -264,16 +265,17 @@ public class Game{
     //COLORIZE THE OUTPUT IF HIGH/LOW:
     // under 25% : red
     if (((double) hp)/ maxHP < 0.25) {
-      System.out.print(Text.colorize(Text.RED));
+      output = Text.colorize(Text.RED) + output;
     }
     // under 75% : yellow
     else if (((double) hp)/ maxHP < 0.75) {
-      System.out.print(Text.colorize(Text.YELLOW));
+      output = Text.colorize(Text.YELLOW) + output;
     }
     // otherwise : white
     else {
-      System.out.print(Text.colorize(Text.WHITE));
+      output = Text.colorize(Text.WHITE) + output;
     }
+    System.out.print(output);
     return output;
   }
 
