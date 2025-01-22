@@ -49,7 +49,7 @@ Make a clear list of features that work/dont work
 **Role:** Long-range attacker/buffer  
 
 - **Attack:** Throws spices into opponent's eyes and makes them tear up (deals 3-5 damage, restores 2 sprays)  
-- **Special Attack:** (AoE) Sprays the gigantic pepper spray on opponents (deals 5-13 damage, reduces sprays by 6)  
+- **Special Attack:** (AoE) Sprays the gigantic pepper spray on opponents (deals 5-7 damage per opponent, reduces sprays by 6)  
 - **Support (self):** Drinks spicy soup and reinvigorates (restores 4 sprays, restores 1 HP)  
 - **Support (comrades):** Gives comrades spicy sticks to eat (restores 6 special)  
 

@@ -398,39 +398,43 @@ public class Game{
 
       //display event based on last turn's input
       if(partyTurn){
-
-        //Process user input for the last Adventurer:
-        if(input.startsWith("attack") || input.startsWith("a")){
-          /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          if (input.equals("attack") || input.equals("a")) {
-            text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
-          } else {
-            int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
-            text += party.get(whichPlayer).attack(enemies.get(enemyAttacked));
+        
+        if (party.get(whichPlayer).getHP() > 0) {
+          //Process user input for the last Adventurer:
+          if(input.startsWith("attack") || input.startsWith("a")){
+            /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+            if (input.equals("attack") || input.equals("a")) {
+              text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
+            } else {
+              int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
+              text += party.get(whichPlayer).attack(enemies.get(enemyAttacked));
+            }
+            /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
           }
-          /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-        }
-        else if(input.startsWith("special") || input.startsWith("sp")){
-          /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          if (input.equals("special") || input.equals("sp")) {
-            text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
-          } else {
-            int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
-            text += party.get(whichPlayer).specialAttack(enemies.get(enemyAttacked));
+          else if(input.startsWith("special") || input.startsWith("sp")){
+            /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+            if (input.equals("special") || input.equals("sp")) {
+              text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
+            } else {
+              int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
+              text += party.get(whichPlayer).specialAttack(enemies.get(enemyAttacked));
+            }
+            /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
           }
-          /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-        }
-        else if(input.startsWith("su ") || input.startsWith("support ")){
-          //"support 0" or "su 0" or "su 2" etc.
-          //assume the value that follows su  is an integer.
-          /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
-          text += party.get(whichPlayer).support(party.get(playerSupported));
-          /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-        }
-        else {
-          drawText("Invalid input! Please choose a valid command for " + party.get(whichPlayer) + ".", 30, 1);
-          whichPlayer--;
+          else if(input.startsWith("su ") || input.startsWith("support ")){
+            //"support 0" or "su 0" or "su 2" etc.
+            //assume the value that follows su  is an integer.
+            /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+            int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
+            text += party.get(whichPlayer).support(party.get(playerSupported));
+            /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+          }
+          else {
+            drawText("Invalid input! Please choose a valid command for " + party.get(whichPlayer) + ".", 30, 1);
+            whichPlayer--;
+          }
+        } else {
+            drawText(party.get(whichPlayer).getName() + " is dead and cannot act.", 30, 1);
         }
 
         TextBox(28, 1, 80, 2, " ");
