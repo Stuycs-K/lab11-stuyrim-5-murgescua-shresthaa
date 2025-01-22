@@ -393,7 +393,7 @@ public class Game{
       input = userInput(in, 29, 1);
 
       //example debug statment
-      TextBox(31,1,80,10,"input: "+input+", partyTurn:"+partyTurn+ ", whichPlayer="+whichPlayer+ ", whichOpp="+whichOpponent );
+      //TextBox(31,1,80,10,"input: "+input+", partyTurn:"+partyTurn+ ", whichPlayer="+whichPlayer+ ", whichOpp="+whichOpponent );
       String text = "";
 
       //display event based on last turn's input
