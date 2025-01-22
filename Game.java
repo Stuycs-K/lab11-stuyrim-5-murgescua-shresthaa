@@ -387,15 +387,15 @@ public class Game{
     //display this prompt at the start of the game.
     String preprompt = "Enter command for "+party.get(whichPlayer)+": attack(a)/special(sp)/support(su)/quit(q)";
     drawText(preprompt, 28, 1);
-    String text = "";
 
     while(! (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("quit"))){
       //Read user input
       input = userInput(in, 29, 1);
 
       //example debug statment
-      //TextBox(24,2,1,78,"input: "+input+" partyTurn:"+partyTurn+ " whichPlayer="+whichPlayer+ " whichOpp="+whichOpponent );
-
+      TextBox(30,1,80,10,"input: "+input+", partyTurn:"+partyTurn+ ", whichPlayer="+whichPlayer+ ", whichOpp="+whichOpponent );
+      String text = "";
+      
       //display event based on last turn's input
       if(partyTurn){
 
@@ -439,6 +439,7 @@ public class Game{
           drawText(prompt, 28, 1);
           partyTurn = false;
           whichOpponent = 0;
+          whichPlayer = 0;
         }
         //done with one party member
       }else{
@@ -479,6 +480,7 @@ public class Game{
         //THIS BLOCK IS TO END THE ENEMY TURN
         //It only triggers after the last enemy goes.
         whichPlayer = 0;
+        whichOpponent = 0;
         turn++;
         partyTurn=true;
         //display this prompt before player's turn

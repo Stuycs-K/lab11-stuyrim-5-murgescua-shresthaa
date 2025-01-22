@@ -43,15 +43,21 @@ public class HungryVampire extends Adventurer{
     }
 
     /*Deal 8 damage to opponent, only if lifeblood is high enough.
-    *Reduces lifeblood by 5; increases hp by 2.
+    *Reduces lifeblood by 5; increases hp by 2 if not at max HP.
     */
     public String specialAttack(Adventurer other){
+      String sptext = "";
       if(getSpecial() >= 5){
         setSpecial(getSpecial()-5);
-        setHP(getHP()+2);
+        if (getHP() + 2 <= getmaxHP()) {
+          setHP(getHP()+2);
+        } else {
+          sptext += "Already at maximum HP. ";
+        }
         int damage = 8;
         other.applyDamage(damage);
-        return this + " used their vampire moves to suck blood out of "+other+", dealing "+ damage +" points of damage. ";
+        sptext += this + " used their vampire moves to suck blood out of "+other+", dealing "+ damage +" points of damage. ";
+        return sptext;
       }else{
         return "Not enough lifeblood to use this ultimate attack. Instead "+attack(other);
       }

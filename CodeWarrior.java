@@ -7,7 +7,7 @@ public class CodeWarrior extends Adventurer{
   public CodeWarrior(String name, int hp, String language){
     super(name,hp);
     caffeineMax = 12;
-    caffeine = 8;
+    caffeine = caffeineMax/2;
     preferredLanguage = language;
   }
 
