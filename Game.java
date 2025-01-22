@@ -492,6 +492,14 @@ public class Game{
         drawText(prompt, 28, 1);
       }
 
+      if (allDead(party)) {
+        drawText("You lose! GAME OVER.", 15, 30);
+        input = "q";
+      }
+      if (allDead(enemies)) {
+        drawText("All the enemies are dead! You win!", 15, 23);
+        input = "q";
+      }
       //display the updated screen after input has been processed.
       drawScreen(party, enemies);
 
@@ -501,5 +509,15 @@ public class Game{
 
     //After quit reset things:
     quit();
+  }
+
+  // returns true if not all members in the party are dead
+  public static boolean allDead(ArrayList<Adventurer> party) {
+    for (Adventurer member : party) {
+        if (member.getHP() > 0) {
+            return false;
+        }
+    }
+    return true;
   }
 }
