@@ -33,6 +33,8 @@ Make a clear list of features that work/dont work
 
 :ballot_box_with_check: Pre-assigned/default character names
 
+:ballot_box_with_check: Allows attacks/special attacks to specific enemies
+
 :beetle: SpiceEnthusiast's special increases when using specialAttack
 
 :beetle: Enemies/players with HP below 0 continue to act
