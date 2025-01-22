@@ -15,6 +15,7 @@ Make a clear list of features that work/dont work
 
 :beetle: This is a bug that affects the game.
 
+---
 
 :white_check_mark: Attack, special, support, quit commands
 
@@ -33,6 +34,8 @@ Make a clear list of features that work/dont work
 :ballot_box_with_check: Pre-assigned/default character names
 
 :beetle: SpiceEnthusiast's special increases when using specialAttack
+
+:beetle: Enemies/players with HP below 0 continue to act
 
 
 ## Adventurer Subclasses
