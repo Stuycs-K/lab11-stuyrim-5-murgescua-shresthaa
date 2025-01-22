@@ -423,7 +423,7 @@ public class Game{
           whichPlayer--;
         }
 
-        TextBox(28, 1, 80, 1, " ");
+        TextBox(28, 1, 80, 2, " ");
         TextBox(5, 1, 80, 18, text);
 
         //You should decide when you want to re-ask for user input
