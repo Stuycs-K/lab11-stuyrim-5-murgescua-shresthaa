@@ -27,6 +27,8 @@ Make a clear list of features that work/dont work
 
 :white_check_mark: Randomly chosen players/enemies
 
+:question: Special attacks on enemies by players sometimes increases special
+
 :ballot_box_with_check: Red text for enemies
 
 :ballot_box_with_check: Checking for valid input command
@@ -34,8 +36,6 @@ Make a clear list of features that work/dont work
 :ballot_box_with_check: Pre-assigned/default character names
 
 :ballot_box_with_check: Allows attacks/special attacks to specific enemies
-
-:beetle: SpiceEnthusiast's special increases when using specialAttack
 
 :beetle: Enemies/players with HP below 0 continue to act
 
