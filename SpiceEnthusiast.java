@@ -1,3 +1,4 @@
+import java.util.*;
 public class SpiceEnthusiast extends Adventurer {
     int sprays, spraysMax;
 
@@ -43,8 +44,8 @@ public class SpiceEnthusiast extends Adventurer {
       + " points of damage. " + other + " tears up. ";
     }
 
-    /*Deal 5-13 damage to opponent, only if sprays is high enough.
-    *Reduces sprays by 6.*/
+    /*Deal 5-13 damage to opponent, reduces sprays by 6.
+    *Only used as abstract method.*/
     public String specialAttack(Adventurer other){
       if (getSpecial() >= 6) {
         setSpecial(getSpecial() - 6);
@@ -54,6 +55,25 @@ public class SpiceEnthusiast extends Adventurer {
         + other + ", dealing " + damage + " points of damage. ";
       } else {
         return "Not enough sprays to use the gigantic pepper spray. Instead " + attack(other);
+      }
+    }
+
+    /*Deal 5-7 damage to each opponent, only if sprays is high enough.
+    *Reduces sprays by 6.*/
+    public String specialAttack(ArrayList<Adventurer> others){
+      String text = "";
+      if (getSpecial() >= 6) {
+        setSpecial(getSpecial() - 6);
+        for (Adventurer other : others) {
+          int damage = (int) (Math.random() * 3) + 5;
+          other.applyDamage(damage);
+          text += this + " used their gigantic pepper spray on " + other + ". Spiciness attacks "
+          + other + ", dealing " + damage + " points of damage. ";
+        }
+        return text;
+      } else {
+        int randomEnemy = (int) (Math.random() * others.size());
+        return "Not enough sprays to use the gigantic pepper spray. Instead " + attack(others.get(randomEnemy));
       }
     }
 

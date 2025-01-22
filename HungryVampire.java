@@ -62,6 +62,7 @@ public class HungryVampire extends Adventurer{
         return "Not enough lifeblood to use this ultimate attack. Instead "+attack(other);
       }
     }
+
     /*Restores 3 HP to other, loses 2 HP*/
     public String support(Adventurer other){
       other.setHP(other.getHP()+3);
