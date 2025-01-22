@@ -393,9 +393,9 @@ public class Game{
       input = userInput(in, 29, 1);
 
       //example debug statment
-      TextBox(30,1,80,10,"input: "+input+", partyTurn:"+partyTurn+ ", whichPlayer="+whichPlayer+ ", whichOpp="+whichOpponent );
+      TextBox(31,1,80,10,"input: "+input+", partyTurn:"+partyTurn+ ", whichPlayer="+whichPlayer+ ", whichOpp="+whichOpponent );
       String text = "";
-      
+
       //display event based on last turn's input
       if(partyTurn){
 
@@ -418,8 +418,12 @@ public class Game{
           text += party.get(whichPlayer).support(party.get(playerSupported));
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
+        else {
+          drawText("Invalid input! Please choose a valid command for " + party.get(whichPlayer) + ".", 30, 1);
+          whichPlayer--;
+        }
 
-        TextBox(28, 1, 80, 2, " ");
+        TextBox(28, 1, 80, 1, " ");
         TextBox(5, 1, 80, 18, text);
 
         //You should decide when you want to re-ask for user input
