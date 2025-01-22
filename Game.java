@@ -471,16 +471,18 @@ public class Game{
         if (enemies.size() > whichOpponent) {
           for (int enemymate = 0; enemymate < enemies.size(); enemymate++) {
             Adventurer enemymateAdv = enemies.get(enemymate);
-            if (enemymateAdv.getHP() < (enemymateAdv.getmaxHP() * 0.2)) {
-              enemyText += enemies.get(whichOpponent).support(enemymateAdv);
-            }
-            else {
-              double spProbability = Math.random();
-              int randomHero = (int) (Math.random() * party.size());
-              if (spProbability > 0.7) {
-                enemyText += enemies.get(whichOpponent).specialAttack(party.get(randomHero));
-              } else {
-                enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
+            if (enemymateAdv.getHP() > 0) {
+              if (enemymateAdv.getHP() < (enemymateAdv.getmaxHP() * 0.2)) {
+                enemyText += enemies.get(whichOpponent).support(enemymateAdv);
+              }
+              else {
+                double spProbability = Math.random();
+                int randomHero = (int) (Math.random() * party.size());
+                if (spProbability > 0.7) {
+                  enemyText += enemies.get(whichOpponent).specialAttack(party.get(randomHero));
+                } else {
+                  enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
+                }
               }
             }
             whichOpponent++;
