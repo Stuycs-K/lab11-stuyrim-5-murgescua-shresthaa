@@ -425,8 +425,13 @@ public class Game{
             //"support 0" or "su 0" or "su 2" etc.
             //assume the value that follows su  is an integer.
             /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-            int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
+            try { 
+              int playerSupported = Integer.valueOf(input.substring(input.length() - 1));
             text += party.get(whichPlayer).support(party.get(playerSupported));
+            } catch (NumberFormatException e) {
+              drawText("Invalid input! Enter a number after 'su' or 'support'.", 30, 1);
+              whichPlayer--; // Re-prompt for the same player
+            }
             /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
           }
           else {
