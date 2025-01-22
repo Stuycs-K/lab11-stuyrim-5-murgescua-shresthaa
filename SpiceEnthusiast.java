@@ -51,7 +51,7 @@ public class SpiceEnthusiast extends Adventurer {
         int damage = (int) ((Math.random() * 6) + (Math.random() * 6)) + 5;
         other.applyDamage(damage);
         return this + " used their gigantic pepper spray on " + other + ". Spiciness attacks "
-        + other + " dealing " + damage + " points of damage. ";
+        + other + ", dealing " + damage + " points of damage. ";
       } else {
         return "Not enough sprays to use the gigantic pepper spray. Instead " + attack(other);
       }

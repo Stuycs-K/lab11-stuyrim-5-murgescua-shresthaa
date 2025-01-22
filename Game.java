@@ -278,10 +278,6 @@ public class Game{
     return output;
   }
 
-
-
-
-
   //Display the party and enemies
   //Do not write over the blank areas where text will appear.
   //Place the cursor at the place where the user will by typing their input at the end of this method.

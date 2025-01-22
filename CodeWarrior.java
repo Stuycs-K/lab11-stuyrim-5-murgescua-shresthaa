@@ -7,7 +7,7 @@ public class CodeWarrior extends Adventurer{
   public CodeWarrior(String name, int hp, String language){
     super(name,hp);
     caffeineMax = 12;
-    caffeine = caffeineMax/2;
+    caffeine = 8;
     preferredLanguage = language;
   }
 
@@ -59,7 +59,7 @@ public class CodeWarrior extends Adventurer{
       other.applyDamage(damage);
       return this + " used their "+preferredLanguage+
       " skills to hack the matrix. "+
-      " This glitched out "+other+" dealing "+ damage +" points of damage. ";
+      " This glitched out "+other+", dealing "+ damage +" points of damage. ";
     }else{
       return "Not enough caffeine to use the ultimate code. Instead "+attack(other);
     }
