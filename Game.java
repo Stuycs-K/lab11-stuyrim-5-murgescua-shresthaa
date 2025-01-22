@@ -95,7 +95,7 @@ public class Game{
     //YOUR CODE HERE
     // player line
     Text.go(4, 1);
-    System.out.print(Text.colorize(BORDER_COLOR + BORDER_BACKGROUND));
+    System.out.print(Text.colorize(BORDER_COLOR));
     for (int i = 0; i < WIDTH; i++) {
       System.out.print("-");
     }
@@ -225,7 +225,7 @@ public class Game{
       for (int i = 0; i < party.size(); i++) { //for each member
           Text.go(startRow, i*30);
           System.out.print(party.get(i).getName());
-          
+
           Text.go(startRow+1, i*30);
 
           //HP changes colors
@@ -275,7 +275,6 @@ public class Game{
     else {
       output = Text.colorize(Text.WHITE) + output;
     }
-    System.out.print(output);
     return output;
   }
 
