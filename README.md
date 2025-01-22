@@ -16,6 +16,25 @@ Make a clear list of features that work/dont work
 :beetle: This is a bug that affects the game.
 
 
+:white_check_mark: Attack, special, support, quit commands
+
+:white_check_mark: Special boss
+
+:white_check_mark: Different adventurer types
+
+:white_check_mark: Text inside text box
+
+:white_check_mark: Randomly chosen players/enemies
+
+:ballot_box_with_check: Red text for enemies
+
+:ballot_box_with_check: Checking for valid input command
+
+:ballot_box_with_check: Pre-assigned/default character names
+
+:beetle: SpiceEnthusiast's special increases when using specialAttack
+
+
 ## Adventurer Subclasses
 
 ### 1. Spice Enthusiast  
