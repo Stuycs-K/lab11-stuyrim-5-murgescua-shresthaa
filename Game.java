@@ -400,14 +400,24 @@ public class Game{
       if(partyTurn){
 
         //Process user input for the last Adventurer:
-        if(input.equals("attack") || input.equals("a")){
+        if(input.startsWith("attack") || input.startsWith("a")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-          text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
+          if (input.equals("attack") || input.equals("a")) {
+            text += party.get(whichPlayer).attack(enemies.get(whichOpponent));
+          } else {
+            int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
+            text += party.get(whichPlayer).attack(enemies.get(enemyAttacked));
+          }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
-        else if(input.equals("special") || input.equals("sp")){
+        else if(input.startsWith("special") || input.startsWith("sp")){
           /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-           text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
+          if (input.equals("special") || input.equals("sp")) {
+            text += party.get(whichPlayer).specialAttack(enemies.get(whichOpponent));
+          } else {
+            int enemyAttacked = Integer.valueOf(input.substring(input.length() - 1));
+            text += party.get(whichPlayer).specialAttack(enemies.get(enemyAttacked));
+          }
           /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
         }
         else if(input.startsWith("su ") || input.startsWith("support ")){
