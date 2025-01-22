@@ -471,8 +471,13 @@ public class Game{
               enemyText += enemies.get(whichOpponent).support(enemymateAdv);
             }
             else {
+              double spProbability = Math.random();
               int randomHero = (int) (Math.random() * party.size());
-              enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
+              if (spProbability > 0.7) {
+                enemyText += enemies.get(whichOpponent).specialAttack(party.get(randomHero));
+              } else {
+                enemyText += enemies.get(whichOpponent).attack(party.get(randomHero));
+              }
             }
             whichOpponent++;
           }
