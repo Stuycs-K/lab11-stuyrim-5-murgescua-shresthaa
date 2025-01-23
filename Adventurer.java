@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 public abstract class Adventurer{
   private String name;
   private int HP,maxHP;
@@ -47,6 +47,10 @@ public abstract class Adventurer{
 
   //hurt or hinder the target adventurer, consume some special resource
   public abstract String specialAttack(Adventurer other);
+
+  public String specialAttack(ArrayList<Adventurer> others) {
+    return "";
+  }
 
   /*
   standard methods
